@@ -11,7 +11,7 @@ export default async function handler(
 ) {
   const { response, code } = await collegeScoreCard(
     req.query.collegeName as string,
-    req.query.page as number
+    Number(req.query.page)
   );
 
   res.status(code).json(response);
